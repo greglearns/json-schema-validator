@@ -1,11 +1,10 @@
 // var Stringify = require('json-stringify-safe');
 var Themis = require('themis');
-var jsonSchemaV4 = require(__dirname+'/meta-schema/schema');
-var jsonHyperSchemaV4 = require(__dirname+'/meta-schema/hyper-schema');
+var jsonSchemaV4 = require('./meta-schema/schema');
+var jsonHyperSchemaV4 = require('./meta-schema/hyper-schema');
 
 module.exports = function(schema, opts) {
   var schemaList = [
-    // { id: 'placeHolder' }, // will replace this with real schema
     schema,
     jsonSchemaV4,
     jsonHyperSchemaV4
