@@ -42,6 +42,10 @@ module.exports = function(schema, opts) {
 function reportSimple(root) {
   if (root.valid || !root.errors.length) { return [] }
   return root.errors.map(function(error) {
+    if (error.validator === 'not') {
+      error.message += ': '+JSON.stringify(error.validator_value)
+    }
+
     var result = {
       message: error.message,
       path: error.path,
